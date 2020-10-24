@@ -26,8 +26,8 @@ weather_lang = 'en' # see https://darksky.net/dev/docs/forecast for full list of
 weather_unit = 'us' # see https://darksky.net/dev/docs/forecast for full list of unit parameters values
 latitude = None # Set this if IP location lookup does not work for you (must be a string)
 longitude = None # Set this if IP location lookup does not work for you (must be a string)
-xlarge_text_size = 94
-large_text_size = 80
+xlarge_text_size = 75
+large_text_size = 60
 medium_text_size = 28
 small_text_size = 18
 
@@ -375,10 +375,10 @@ class FullscreenWindow:
         self.images.pack(side=RIGHT, anchor=E, padx=0, pady=0)
         # clock
         self.clock = Clock(self.leftFrame1)
-        self.clock.pack(side=TOP, anchor=N, padx=100, pady=10)
+        self.clock.pack(side=TOP, anchor=N, padx=30, pady=10)
         # weather
         self.weather = Weather(self.leftFrame1)
-        self.weather.pack(side=BOTTOM, anchor=S, padx=100, pady=20)
+        self.weather.pack(side=BOTTOM, anchor=S, padx=30, pady=20)
         # news
         # self.news = News(self.bottomFrame)
         # self.news.pack(side=LEFT, anchor=S, padx=100, pady=60)
