@@ -18,7 +18,8 @@ LOCALE_LOCK = threading.Lock()
 
 ui_locale = '' # e.g. 'fr_FR' fro French, '' as default
 time_format = 24 # 12 or 24
-date_format = "%b %d, %Y" # check python doc for strftime() for options
+# date_format = "%b %d, %Y" # check python doc for strftime() for options
+date_format = "%d %b" # check python doc for strftime() for options
 news_country_code = 'us'
 weather_api_token = '<TOKEN>' # create account at https://darksky.net/dev/
 weather_lang = 'en' # see https://darksky.net/dev/docs/forecast for full list of language parameters values
@@ -26,7 +27,7 @@ weather_unit = 'us' # see https://darksky.net/dev/docs/forecast for full list of
 latitude = None # Set this if IP location lookup does not work for you (must be a string)
 longitude = None # Set this if IP location lookup does not work for you (must be a string)
 xlarge_text_size = 94
-large_text_size = 48
+large_text_size = 80
 medium_text_size = 28
 small_text_size = 18
 
@@ -63,16 +64,16 @@ class Clock(Frame):
         Frame.__init__(self, parent, bg='black')
         # initialize time label
         self.time1 = ''
-        self.timeLbl = Label(self, font=('Helvetica', large_text_size), fg="white", bg="black")
+        self.timeLbl = Label(self, font=('Helvetica', xlarge_text_size), fg="white", bg="black")
         self.timeLbl.pack(side=TOP, anchor=E)
         # initialize day of week
         self.day_of_week1 = ''
-        self.dayOWLbl = Label(self, text=self.day_of_week1, font=('Helvetica', small_text_size), fg="white", bg="black")
-        self.dayOWLbl.pack(side=TOP, anchor=E)
+        # self.dayOWLbl = Label(self, text=self.day_of_week1, font=('Helvetica', small_text_size), fg="white", bg="black")
+        # self.dayOWLbl.pack(side=TOP, anchor=CENTER)
         # initialize date label
         self.date1 = ''
-        self.dateLbl = Label(self, text=self.date1, font=('Helvetica', small_text_size), fg="white", bg="black")
-        self.dateLbl.pack(side=TOP, anchor=E)
+        self.dateLbl = Label(self, text=self.day_of_week1 + ', ' + self.date1, font=('Helvetica', small_text_size), fg="white", bg="black")
+        self.dateLbl.pack(side=TOP, anchor=CENTER)
         self.tick()
 
     def tick(self):
@@ -88,12 +89,12 @@ class Clock(Frame):
             if time2 != self.time1:
                 self.time1 = time2
                 self.timeLbl.config(text=time2)
-            if day_of_week2 != self.day_of_week1:
-                self.day_of_week1 = day_of_week2
-                self.dayOWLbl.config(text=day_of_week2)
+            # if day_of_week2 != self.day_of_week1:
+            #     self.day_of_week1 = day_of_week2
+            #     self.dayOWLbl.config(text=day_of_week2)
             if date2 != self.date1:
                 self.date1 = date2
-                self.dateLbl.config(text=date2)
+                self.dateLbl.config(text=day_of_week2 + ', ' + date2)
             # calls itself every 200 milliseconds
             # to update the time display as needed
             # could use >200 ms, but display gets jerky
@@ -108,19 +109,19 @@ class Weather(Frame):
         self.location = ''
         self.currently = ''
         self.icon = ''
+        self.iconLbl = Label(self, bg="black")
+        self.iconLbl.pack(side=TOP, anchor=CENTER, padx=20)
         self.degreeFrm = Frame(self, bg="black")
         self.degreeFrm.pack(side=TOP, anchor=W)
-        self.temperatureLbl = Label(self.degreeFrm, font=('Helvetica', xlarge_text_size), fg="white", bg="black")
-        self.temperatureLbl.pack(side=LEFT, anchor=N)
-        self.iconLbl = Label(self.degreeFrm, bg="black")
-        self.iconLbl.pack(side=LEFT, anchor=N, padx=20)
-        self.currentlyLbl = Label(self, font=('Helvetica', medium_text_size), fg="white", bg="black")
-        self.currentlyLbl.pack(side=TOP, anchor=W)
-        self.forecastLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="black")
-        self.forecastLbl.pack(side=TOP, anchor=W)
+        self.temperatureLbl = Label(self, font=('Helvetica', large_text_size), fg="white", bg="black")
+        self.temperatureLbl.pack(side=TOP, anchor=CENTER, pady=0)
+        # self.currentlyLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="black")
+        # self.currentlyLbl.pack(side=TOP, anchor=CENTER)
+        self.forecastLbl = Label(self, font=('Helvetica', medium_text_size), fg="white", bg="black")
+        self.forecastLbl.pack(side=TOP, anchor=CENTER)
         self.locationLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="black")
-        self.locationLbl.pack(side=TOP, anchor=W)
-        #self.get_weather()
+        self.locationLbl.pack(side=TOP, anchor=CENTER)
+        self.get_weather()
 
     def get_ip(self):
         try:
@@ -138,30 +139,34 @@ class Weather(Frame):
             if latitude is None and longitude is None:
                 # get location
                 location_req_url = "http://freegeoip.net/json/%s" % self.get_ip()
-                r = requests.get(location_req_url)
-                location_obj = json.loads(r.text)
+                # r = requests.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/264863?apikey=iKTjxzrAqZoG3offbdoaxF2XyAhWya3Q") #(location_req_url)
+                # location_obj = json.loads(r.text)
+                #
+                # lat = location_obj['latitude']
+                # lon = location_obj['longitude']
 
-                lat = location_obj['latitude']
-                lon = location_obj['longitude']
-
-                location2 = "%s, %s" % (location_obj['city'], location_obj['region_code'])
+                location2 = "Wyszków, mazowieckie"
 
                 # get weather
-                weather_req_url = "https://api.darksky.net/forecast/%s/%s,%s?lang=%s&units=%s" % (weather_api_token, lat,lon,weather_lang,weather_unit)
+                # weather_req_url = "https://api.darksky.net/forecast/%s/%s,%s?lang=%s&units=%s" % (weather_api_token, lat,lon,weather_lang,weather_unit)
             else:
                 location2 = ""
                 # get weather
                 weather_req_url = "https://api.darksky.net/forecast/%s/%s,%s?lang=%s&units=%s" % (weather_api_token, latitude, longitude, weather_lang, weather_unit)
 
-            r = requests.get(weather_req_url)
+            r = requests.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/264863?apikey=iKTjxzrAqZoG3offbdoaxF2XyAhWya3Q")
             weather_obj = json.loads(r.text)
 
             degree_sign= u'\N{DEGREE SIGN}'
-            temperature2 = "%s%s" % (str(int(weather_obj['currently']['temperature'])), degree_sign)
-            currently2 = weather_obj['currently']['summary']
-            forecast2 = weather_obj["hourly"]["summary"]
+            # temperature2 = "%s%s" % (str(int(weather_obj['currently']['temperature'])), degree_sign)
+            temperature2 = "%s%s" % (str(24), degree_sign)
+            # currently2 = weather_obj['currently']['summary']
+            currently2 = "currently2"
+            # forecast2 = weather_obj["hourly"]["summary"]
+            forecast2 = "Pogodnie"
 
-            icon_id = weather_obj['currently']['icon']
+            # icon_id = weather_obj['currently']['icon']
+            icon_id = "icon_id"
             icon2 = None
 
             if icon_id in icon_lookup:
@@ -181,9 +186,9 @@ class Weather(Frame):
                 # remove image
                 self.iconLbl.config(image='')
 
-            if self.currently != currently2:
-                self.currently = currently2
-                self.currentlyLbl.config(text=currently2)
+            # if self.currently != currently2:
+            #     self.currently = currently2
+            #     self.currentlyLbl.config(text=currently2)
             if self.forecast != forecast2:
                 self.forecast = forecast2
                 self.forecastLbl.config(text=forecast2)
@@ -329,7 +334,7 @@ class Images(Frame):
         #self.button_forward.pack()
         #self.button_forward.pack_forget()
 
-        self.after(1000, lambda: self.forward_time())  # after 1000ms
+        self.after(3000, lambda: self.forward_time())  # after 1000ms
 
 
 
@@ -357,9 +362,10 @@ class FullscreenWindow:
     def __init__(self):
         self.tk = Tk()
         self.tk.configure(background='black')
-        self.leftFrame = Frame(self.tk, background = 'black')
+        self.leftFrame1 = Frame(self.tk, background = 'black')
+        self.leftFrame2 = Frame(self.tk, background='black')
         self.rightFrame = Frame(self.tk, background = 'black')
-        self.leftFrame.pack(side = LEFT, fill=BOTH, expand = YES)
+        self.leftFrame1.pack(side = LEFT, fill=BOTH, expand = YES)
         self.rightFrame.pack(side = RIGHT, fill=BOTH, expand = YES)
         self.state = False
         self.tk.bind("<Return>", self.toggle_fullscreen)
@@ -368,11 +374,11 @@ class FullscreenWindow:
         self.images = Images(self.rightFrame)
         self.images.pack(side=RIGHT, anchor=E, padx=0, pady=0)
         # clock
-        self.clock = Clock(self.leftFrame)
-        self.clock.pack(side=LEFT, anchor=N, padx=100, pady=60)
+        self.clock = Clock(self.leftFrame1)
+        self.clock.pack(side=TOP, anchor=N, padx=100, pady=10)
         # weather
-        # self.weather = Weather(self.topFrame)
-        # self.weather.pack(side=LEFT, anchor=S, padx=100, pady=60)
+        self.weather = Weather(self.leftFrame1)
+        self.weather.pack(side=BOTTOM, anchor=S, padx=100, pady=20)
         # news
         # self.news = News(self.bottomFrame)
         # self.news.pack(side=LEFT, anchor=S, padx=100, pady=60)
