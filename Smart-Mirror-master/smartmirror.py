@@ -63,10 +63,10 @@ icon_lookup = {
 
 class Clock(Frame):
     def __init__(self, parent, *args, **kwargs):
-        Frame.__init__(self, parent, bg='red')
+        Frame.__init__(self, parent, bg='black')
         # initialize time label
         self.time1 = ''
-        self.timeLbl = Label(self, font=('Helvetica', xlarge_text_size), fg="white", bg="green")
+        self.timeLbl = Label(self, font=('Helvetica', xlarge_text_size), fg="white", bg="black")
         self.timeLbl.pack(side=TOP, anchor=E)
         # initialize day of week
         self.day_of_week1 = ''
@@ -75,7 +75,7 @@ class Clock(Frame):
         # initialize date label
         self.date1 = ''
         self.dateLbl = Label(self, text=self.day_of_week1 + ', ' + self.date1, font=('Helvetica', small_text_size),
-                             fg="white", bg="blue")
+                             fg="white", bg="black")
         self.dateLbl.pack(side=TOP, anchor=CENTER)
         self.tick()
 
@@ -106,23 +106,23 @@ class Clock(Frame):
 
 class Weather(Frame):
     def __init__(self, parent, *args, **kwargs):
-        Frame.__init__(self, parent, bg='red')
+        Frame.__init__(self, parent, bg='black')
         self.temperature = ''
         self.forecast = ''
         self.location = ''
         self.currently = ''
         self.icon = ''
-        self.iconLbl = Label(self, bg="green")
+        self.iconLbl = Label(self, bg="black")
         self.iconLbl.pack(side=TOP, anchor=CENTER, padx=20)
-        self.degreeFrm = Frame(self, bg="blue")
+        self.degreeFrm = Frame(self, bg="black")
         self.degreeFrm.pack(side=TOP, anchor=W)
-        self.temperatureLbl = Label(self, font=('Helvetica', large_text_size), fg="white", bg="yellow")
+        self.temperatureLbl = Label(self, font=('Helvetica', large_text_size), fg="white", bg="black")
         self.temperatureLbl.pack(side=TOP, anchor=CENTER, pady=0)
         # self.currentlyLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="black")
         # self.currentlyLbl.pack(side=TOP, anchor=CENTER)
-        self.forecastLbl = Label(self, font=('Helvetica', medium_text_size), fg="white", bg="brown")
+        self.forecastLbl = Label(self, font=('Helvetica', medium_text_size), fg="white", bg="black")
         self.forecastLbl.pack(side=TOP, anchor=CENTER)
-        self.locationLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="grey")
+        self.locationLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="black")
         self.locationLbl.pack(side=TOP, anchor=CENTER)
         self.get_weather()
 
@@ -256,7 +256,7 @@ class Images(Frame):
 
 class LockImage(Frame):
     def __init__(self, parent, *args, **kwargs):
-        Frame.__init__(self, parent, bg='pink')
+        Frame.__init__(self, parent, bg='black')
         self.lockimg = ImageTk.PhotoImage(Image.open("images/lockimage.jpg"))
 
 
@@ -268,9 +268,9 @@ class FullscreenWindow:
 
     def __init__(self):
         self.tk = Tk()
-        self.tk.configure(background='white')
-        self.leftFrame1 = Frame(self.tk, background='orange')
-        self.rightFrame = Frame(self.tk, background='violet')
+        self.tk.configure(background='black')
+        self.leftFrame1 = Frame(self.tk, background='black')
+        self.rightFrame = Frame(self.tk, background='black')
         self.leftFrame1.pack(side=LEFT, fill=BOTH, expand=YES)
         self.rightFrame.pack(side=TOP, fill=BOTH, expand=YES)
         self.state = False
