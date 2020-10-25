@@ -229,16 +229,17 @@ class Images(Frame):
         self.my_img6 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
         self.my_img7 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
         self.my_img8 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
+        self.my_img9 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
 
         self.image_list = [self.my_img1, self.my_img2, self.my_img3, self.my_img4, self.my_img5, self.my_img6,
-                           self.my_img7, self.my_img8]
+                           self.my_img7, self.my_img8, self.my_img9]
 
         self.my_label = Label(image=self.my_img1)
         self.my_label.config(borderwidth=0, highlightthickness=0)
-        self.my_label.pack(side=BOTTOM, anchor=E, padx=50, pady=15)
+        self.my_label.pack()
 
         self.counter = 0
-        self.forward_time()
+        self.after(3000, lambda: self.forward_time())  # after 1000ms
 
     def forward_time(self):
         self.my_label.pack_forget()
