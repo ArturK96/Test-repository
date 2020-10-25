@@ -223,10 +223,10 @@ class Images(Frame):
         Frame.__init__(self, parent, bg='pink')
         self.my_img1 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
         self.my_img2 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
-        self.my_img3 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
-        self.my_img4 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
-        self.my_img5 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
-        self.my_img6 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
+        self.my_img3 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
+        self.my_img4 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
+        self.my_img5 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
+        self.my_img6 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
         self.my_img7 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
         self.my_img8 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
 
@@ -253,6 +253,15 @@ class Images(Frame):
 
         self.after(3000, lambda: self.forward_time())  # after 1000ms
 
+class LockImage(Frame):
+    def __init__(self, parent, *args, **kwargs):
+        Frame.__init__(self, parent, bg='pink')
+        self.lockimg = ImageTk.PhotoImage(Image.open("images/lockimage.jpg"))
+
+
+        self.locklabel = Label(image=self.lockimg)
+        self.locklabel.config(borderwidth=0, highlightthickness=0)
+        self.locklabel.pack(side=BOTTOM, anchor=E, padx=0, pady=0)
 
 class FullscreenWindow:
 
@@ -267,8 +276,10 @@ class FullscreenWindow:
         self.tk.bind("<Return>", self.toggle_fullscreen)
         self.tk.bind("<Escape>", self.end_fullscreen)
         # images
-        self.images = Images(self.leftFrame1)
-        self.images.pack(side=BOTTOM, anchor=S, padx=100, pady=0)
+        self.lockimage = LockImage(self.rightFrame)
+        self.lockimage.pack(side=BOTTOM, anchor=N, padx=0, pady=0)
+        self.images = Images(self.rightFrame)
+        self.images.pack(side=TOP, anchor=S, padx=0, pady=0)
         # clock
         self.clock = Clock(self.leftFrame1)
         self.clock.pack(side=TOP, anchor=N, padx=30, pady=10)
