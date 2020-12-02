@@ -169,8 +169,8 @@ class Weather(Frame):
 
     def show_forecast(self):
         global i
-        if len(wiadomosc) >13:
-            forecast2 = wiadomosc[i:i+13]
+        if len(wiadomosc) >12:
+            forecast2 = wiadomosc[i:i+12]
             i += 3
             if i > len(wiadomosc):
                 i = 0
@@ -178,7 +178,7 @@ class Weather(Frame):
                 self.forecast = forecast2
                 self.forecastLbl.config(text=forecast2)
             self.after(1000, self.show_forecast)
-        elif len(wiadomosc) < 13:
+        elif len(wiadomosc) < 12:
             forecast2 = wiadomosc
             if self.forecast != forecast2:
                 self.forecast = forecast2
@@ -214,7 +214,7 @@ class Weather(Frame):
             degree_sign = u'\N{DEGREE SIGN}'
             # temperature2 = "%s%s" % (str(int(weather_obj['currently']['temperature'])), degree_sign)
             Temperature = api.get('Temperature').get('Metric').get('Value')
-            temperature2 = "%s %sC" % (str(Temperature), degree_sign)
+            temperature2 = "%s %sC" % (str(round(Temperature)), degree_sign)
             # currently2 = weather_obj['currently']['summary']
             currently2 = "currently2"
             # forecast2 = weather_obj["hourly"]["summary"]
@@ -297,7 +297,7 @@ class Images(Frame):
         self.my_label.pack()
 
         self.counter = 0
-        self.after(3000, lambda: self.forward_time())  # after 1000ms
+        self.after(10000, lambda: self.forward_time())  # after 1000ms
 
     def forward_time(self):
         self.my_label.pack_forget()
@@ -310,7 +310,7 @@ class Images(Frame):
 
         self.my_label.pack()
 
-        self.after(3000, lambda: self.forward_time())  # after 1000ms
+        self.after(10000, lambda: self.forward_time())  # after 1000ms
 
 class LockImage(Frame):
     def __init__(self, parent, *args, **kwargs):
