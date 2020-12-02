@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # smartmirror.py
 # requirements
 # requests, feedparser, traceback, Pillow
@@ -45,19 +46,44 @@ def setlocale(name):  # thread proof function to work with locale
 # maps open weather icons to
 # icon reading is not impacted by the 'lang' parameter
 icon_lookup = {
-    'clear-day': "assets/Sun.png",  # clear sky day
-    'wind': "assets/Wind.png",  # wind
-    'cloudy': "assets/Cloud.png",  # cloudy day
-    'partly-cloudy-day': "assets/PartlySunny.png",  # partly cloudy day
-    'rain': "assets/Rain.png",  # rain day
-    'snow': "assets/Snow.png",  # snow day
-    'snow-thin': "assets/Snow.png",  # sleet day
-    'fog': "assets/Haze.png",  # fog day
-    'clear-night': "assets/Moon.png",  # clear sky night
-    'partly-cloudy-night': "assets/PartlyMoon.png",  # scattered clouds night
-    'thunderstorm': "assets/Storm.png",  # thunderstorm
-    'tornado': "assests/Tornado.png",  # tornado
-    'hail': "assests/Hail.png"  # hail
+    '1': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Sun.png",
+    '2': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Sun.png",
+    '3': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/PartlySunny.png",
+    '4': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/PartlySunny.png",
+    '5': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Haze.png",
+    '11': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Haze.png",
+    '37': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Haze.png",
+    '6': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Cloud.png",
+    '7': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Cloud.png",
+    '8': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Cloud.png",
+    '38': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Cloud.png",
+    '12': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Rain.png",
+    '13': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Rain.png",
+    '14': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Rain.png",
+    '18': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Rain.png",
+    '39': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Rain.png",
+    '40': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Rain.png",
+    '15': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Storm.png",
+    '16': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Storm.png",
+    '17': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Storm.png",
+    '41': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Storm.png",
+    '42': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Storm.png",
+    '19': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '20': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '21': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '22': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '23': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '43': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '44': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Snow.png",
+    '24': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Hail.png",
+    '25': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Hail.png",
+    '26': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Hail.png",
+    '29': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Hail.png",
+    '32': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Wind.png",
+    '33': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Moon.png",
+    '34': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Moon.png",
+    '35': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/PartlyMoon.png",
+    '36': "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/PartlyMoon.png"
 }
 
 
@@ -113,7 +139,7 @@ class Weather(Frame):
         self.currently = ''
         self.icon = ''
         self.iconLbl = Label(self, bg="black")
-        self.iconLbl.pack(side=TOP, anchor=CENTER, padx=20)
+        self.iconLbl.pack(side=TOP, anchor=CENTER, padx=20, pady=35)
         self.degreeFrm = Frame(self, bg="black")
         self.degreeFrm.pack(side=TOP, anchor=W)
         self.temperatureLbl = Label(self, font=('Helvetica', large_text_size), fg="white", bg="black")
@@ -159,29 +185,39 @@ class Weather(Frame):
                     weather_api_token, latitude, longitude, weather_lang, weather_unit)
 
             r = requests.get(
-                "http://dataservice.accuweather.com/forecasts/v1/daily/5day/264863?apikey=iKTjxzrAqZoG3offbdoaxF2XyAhWya3Q")
-            weather_obj = json.loads(r.text)
+                "http://dataservice.accuweather.com/currentconditions/v1/264863?apikey=0TLFVm5cxeAHwzJKqOU1unSVhZj2hlXR&language=pl-PL")
+            api = json.loads(r.content)[0]
 
             degree_sign = u'\N{DEGREE SIGN}'
             # temperature2 = "%s%s" % (str(int(weather_obj['currently']['temperature'])), degree_sign)
-            temperature2 = "%s%s" % (str(24), degree_sign)
+            Temperature = api.get('Temperature').get('Metric').get('Value')
+            temperature2 = "%s%s" % (str(Temperature), degree_sign)
             # currently2 = weather_obj['currently']['summary']
             currently2 = "currently2"
             # forecast2 = weather_obj["hourly"]["summary"]
-            forecast2 = "Pogodnie"
+            WeatherText = api.get('WeatherText')
+            forecast2 = WeatherText
 
             # icon_id = weather_obj['currently']['icon']
+            IsDayTime = api.get('IsDayTime')
+            WeatherIcon = api.get('WeatherIcon')
             icon_id = "icon_id"
+            icon_id = str(WeatherIcon)
             icon2 = None
 
             if icon_id in icon_lookup:
                 icon2 = icon_lookup[icon_id]
+            elif (icon_id == "30") | (icon_id == "31"):
+                if(IsDayTime):
+                    icon2 = "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Sun.png"
+                else:
+                    icon2 = "/home/pi/Desktop/SmartMirror/Smart-Mirror-master/assets/Moon.png"
 
             if icon2 is not None:
                 if self.icon != icon2:
                     self.icon = icon2
                     image = Image.open(icon2)
-                    image = image.resize((100, 100), Image.ANTIALIAS)
+                    image = image.resize((200, 200), Image.ANTIALIAS)
                     image = image.convert('RGB')
                     photo = ImageTk.PhotoImage(image)
 
@@ -211,7 +247,7 @@ class Weather(Frame):
             traceback.print_exc()
             print("Error: %s. Cannot get weather." % e)
 
-        self.after(600000, self.get_weather)
+        self.after(1800000, self.get_weather)
 
     @staticmethod
     def convert_kelvin_to_fahrenheit(kelvin_temp):
@@ -221,15 +257,15 @@ class Weather(Frame):
 class Images(Frame):
     def __init__(self, parent, *args, **kwargs):
         Frame.__init__(self, parent, bg='pink')
-        self.my_img1 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
-        self.my_img2 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
-        self.my_img3 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
-        self.my_img4 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
-        self.my_img5 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
-        self.my_img6 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
-        self.my_img7 = ImageTk.PhotoImage(Image.open("images/1.jpg"))
-        self.my_img8 = ImageTk.PhotoImage(Image.open("images/2.jpg"))
-        self.my_img9 = ImageTk.PhotoImage(Image.open("images/3.jpg"))
+        self.my_img1 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/1.jpg"))
+        self.my_img2 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/2.jpg"))
+        self.my_img3 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/3.jpg"))
+        self.my_img4 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/1.jpg"))
+        self.my_img5 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/2.jpg"))
+        self.my_img6 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/3.jpg"))
+        self.my_img7 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/1.jpg"))
+        self.my_img8 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/2.jpg"))
+        self.my_img9 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/3.jpg"))
 
         self.image_list = [self.my_img1, self.my_img2, self.my_img3, self.my_img4, self.my_img5, self.my_img6,
                            self.my_img7, self.my_img8, self.my_img9]
@@ -257,7 +293,7 @@ class Images(Frame):
 class LockImage(Frame):
     def __init__(self, parent, *args, **kwargs):
         Frame.__init__(self, parent, bg='black')
-        self.lockimg = ImageTk.PhotoImage(Image.open("images/lockimage.jpg"))
+        self.lockimg = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/lockimage.jpg"))
 
 
         self.locklabel = Label(image=self.lockimg)
@@ -268,6 +304,7 @@ class FullscreenWindow:
 
     def __init__(self):
         self.tk = Tk()
+        self.tk.attributes('-fullscreen', True)
         self.tk.configure(background='black')
         self.leftFrame1 = Frame(self.tk, background='black')
         self.rightFrame = Frame(self.tk, background='black')
