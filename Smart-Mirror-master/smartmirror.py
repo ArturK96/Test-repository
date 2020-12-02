@@ -31,6 +31,9 @@ xlarge_text_size = 75
 large_text_size = 60
 medium_text_size = 28
 small_text_size = 18
+i = 0
+forecast2 = ''
+wiadomosc = ''
 
 
 @contextmanager
@@ -139,7 +142,7 @@ class Weather(Frame):
         self.currently = ''
         self.icon = ''
         self.iconLbl = Label(self, bg="black")
-        self.iconLbl.pack(side=TOP, anchor=CENTER, padx=20, pady=35)
+        self.iconLbl.pack(side=TOP, anchor=CENTER, padx=20, pady=0)
         self.degreeFrm = Frame(self, bg="black")
         self.degreeFrm.pack(side=TOP, anchor=W)
         self.temperatureLbl = Label(self, font=('Helvetica', large_text_size), fg="white", bg="black")
@@ -151,6 +154,8 @@ class Weather(Frame):
         self.locationLbl = Label(self, font=('Helvetica', small_text_size), fg="white", bg="black")
         self.locationLbl.pack(side=TOP, anchor=CENTER)
         self.get_weather()
+        self.show_forecast()
+    
 
     def get_ip(self):
         try:
@@ -161,6 +166,24 @@ class Weather(Frame):
         except Exception as e:
             traceback.print_exc()
             return "Error: %s. Cannot get ip." % e
+
+    def show_forecast(self):
+        global i
+        if len(wiadomosc) >13:
+            forecast2 = wiadomosc[i:i+13]
+            i += 3
+            if i > len(wiadomosc):
+                i = 0
+            if self.forecast != forecast2:
+                self.forecast = forecast2
+                self.forecastLbl.config(text=forecast2)
+            self.after(1000, self.show_forecast)
+        elif len(wiadomosc) < 13:
+            forecast2 = wiadomosc
+            if self.forecast != forecast2:
+                self.forecast = forecast2
+                self.forecastLbl.config(text=forecast2)
+            self.after(10000, self.show_forecast)
 
     def get_weather(self):
         try:
@@ -185,18 +208,20 @@ class Weather(Frame):
                     weather_api_token, latitude, longitude, weather_lang, weather_unit)
 
             r = requests.get(
-                "http://dataservice.accuweather.com/currentconditions/v1/264863?apikey=0TLFVm5cxeAHwzJKqOU1unSVhZj2hlXR&language=pl-PL")
+                "http://dataservice.accuweather.com/currentconditions/v1/264863?apikey=A4kdm8u4wiZD6rwAVfLyneoH8sAG82LG&language=pl-PL")
             api = json.loads(r.content)[0]
 
             degree_sign = u'\N{DEGREE SIGN}'
             # temperature2 = "%s%s" % (str(int(weather_obj['currently']['temperature'])), degree_sign)
             Temperature = api.get('Temperature').get('Metric').get('Value')
-            temperature2 = "%s%s" % (str(Temperature), degree_sign)
+            temperature2 = "%s %sC" % (str(Temperature), degree_sign)
             # currently2 = weather_obj['currently']['summary']
             currently2 = "currently2"
             # forecast2 = weather_obj["hourly"]["summary"]
             WeatherText = api.get('WeatherText')
-            forecast2 = WeatherText
+            global wiadomosc
+            wiadomosc = WeatherText
+            global forecast2
 
             # icon_id = weather_obj['currently']['icon']
             IsDayTime = api.get('IsDayTime')
@@ -230,9 +255,6 @@ class Weather(Frame):
             # if self.currently != currently2:
             #     self.currently = currently2
             #     self.currentlyLbl.config(text=currently2)
-            if self.forecast != forecast2:
-                self.forecast = forecast2
-                self.forecastLbl.config(text=forecast2)
             if self.temperature != temperature2:
                 self.temperature = temperature2
                 self.temperatureLbl.config(text=temperature2)
