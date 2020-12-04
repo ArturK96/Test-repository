@@ -282,15 +282,263 @@ class Images(Frame):
         self.my_img1 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/1.jpg"))
         self.my_img2 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/2.jpg"))
         self.my_img3 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/3.jpg"))
-        self.my_img4 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/1.jpg"))
-        self.my_img5 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/2.jpg"))
-        self.my_img6 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/3.jpg"))
-        self.my_img7 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/1.jpg"))
-        self.my_img8 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/2.jpg"))
-        self.my_img9 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/3.jpg"))
+        self.my_img4 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/4.jpg"))
+        self.my_img5 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/5.jpg"))
+        self.my_img6 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/6.jpg"))
+        self.my_img7 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/7.jpg"))
+        self.my_img8 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/8.jpg"))
+        self.my_img9 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/9.jpg"))
+        self.my_img10 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/10.jpg"))
+        self.my_img11 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/11.jpg"))
+        self.my_img12 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/12.jpg"))
+        self.my_img13 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/13.jpg"))
+        self.my_img14 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/14.jpg"))
+        self.my_img15 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/15.jpg"))
+        self.my_img16 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/16.jpg"))
+        self.my_img17 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/17.jpg"))
+        self.my_img18 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/18.jpg"))
+        self.my_img19 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/19.jpg"))
+        self.my_img20 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/20.jpg"))
+        self.my_img21 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/21.jpg"))
+        self.my_img22 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/22.jpg"))
+        self.my_img23 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/23.jpg"))
+        self.my_img24 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/24.jpg"))
+        self.my_img25 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/25.jpg"))
+        self.my_img26 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/26.jpg"))
+        self.my_img27 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/27.jpg"))
+        self.my_img28 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/28.jpg"))
+        self.my_img29 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/29.jpg"))
+        self.my_img30 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/30.jpg"))
+        self.my_img31 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/31.jpg"))
+        self.my_img32 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/32.jpg"))
+        self.my_img33 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/33.jpg"))
+        self.my_img34 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/34.jpg"))
+        self.my_img35 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/35.jpg"))
+        self.my_img36 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/36.jpg"))
+        self.my_img37 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/37.jpg"))
+        self.my_img38 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/38.jpg"))
+        self.my_img39 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/39.jpg"))
+        self.my_img40 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/40.jpg"))
+        self.my_img41 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/41.jpg"))
+        self.my_img42 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/42.jpg"))
+        self.my_img43 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/43.jpg"))
+        self.my_img44 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/44.jpg"))
+        self.my_img45 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/45.jpg"))
+        self.my_img46 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/46.jpg"))
+        self.my_img47 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/47.jpg"))
+        self.my_img48 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/48.jpg"))
+        self.my_img49 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/49.jpg"))
+        self.my_img50 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/50.jpg"))
+        self.my_img51 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/51.jpg"))
+        self.my_img52 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/52.jpg"))
+        self.my_img53 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/53.jpg"))
+        self.my_img54 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/54.jpg"))
+        self.my_img55 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/55.jpg"))
+        self.my_img56 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/56.jpg"))
+        self.my_img57 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/57.jpg"))
+        self.my_img58 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/58.jpg"))
+        self.my_img59 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/59.jpg"))
+        self.my_img60 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/60.jpg"))
+        self.my_img61 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/61.jpg"))
+        self.my_img62 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/62.jpg"))
+        self.my_img63 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/63.jpg"))
+        self.my_img64 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/64.jpg"))
+        self.my_img65 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/65.jpg"))
+        self.my_img66 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/66.jpg"))
+        self.my_img67 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/67.jpg"))
+        self.my_img68 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/68.jpg"))
+        self.my_img69 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/69.jpg"))
+        self.my_img70 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/70.jpg"))
+        self.my_img71 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/71.jpg"))
+        self.my_img72 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/72.jpg"))
+        self.my_img73 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/73.jpg"))
+        self.my_img74 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/74.jpg"))
+        self.my_img75 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/75.jpg"))
+        self.my_img76 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/76.jpg"))
+        self.my_img77 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/77.jpg"))
+        self.my_img78 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/78.jpg"))
+        self.my_img79 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/79.jpg"))
+        self.my_img80 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/80.jpg"))
+        self.my_img81 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/81.jpg"))
+        self.my_img82 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/82.jpg"))
+        self.my_img83 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/83.jpg"))
+        self.my_img84 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/84.jpg"))
+        self.my_img85 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/85.jpg"))
+        self.my_img86 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/86.jpg"))
+        self.my_img87 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/87.jpg"))
+        self.my_img88 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/88.jpg"))
+        self.my_img89 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/89.jpg"))
+        self.my_img90 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/90.jpg"))
+        self.my_img91 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/91.jpg"))
+        self.my_img92 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/92.jpg"))
+        self.my_img93 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/93.jpg"))
+        self.my_img94 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/94.jpg"))
+        self.my_img95 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/95.jpg"))
+        self.my_img96 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/96.jpg"))
+        self.my_img97 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/97.jpg"))
+        self.my_img98 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/98.jpg"))
+        self.my_img99 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/99.jpg"))
+        self.my_img100 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/100.jpg"))
+        self.my_img101 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/101.jpg"))
+        self.my_img102 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/102.jpg"))
+        self.my_img103 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/103.jpg"))
+        self.my_img104 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/104.jpg"))
+        self.my_img105 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/105.jpg"))
+        self.my_img106 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/106.jpg"))
+        self.my_img107 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/107.jpg"))
+        self.my_img108 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/108.jpg"))
+        self.my_img109 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/109.jpg"))
+        self.my_img110 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/110.jpg"))
+        self.my_img111 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/111.jpg"))
+        self.my_img112 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/112.jpg"))
+        self.my_img113 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/113.jpg"))
+        self.my_img114 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/114.jpg"))
+        self.my_img115 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/115.jpg"))
+        self.my_img116 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/116.jpg"))
+        self.my_img117 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/117.jpg"))
+        self.my_img118 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/118.jpg"))
+        self.my_img119 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/119.jpg"))
+        self.my_img120 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/120.jpg"))
+        self.my_img121 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/121.jpg"))
+        self.my_img122 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/122.jpg"))
+        self.my_img123 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/123.jpg"))
+        self.my_img124 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/124.jpg"))
+        self.my_img125 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/125.jpg"))
+        self.my_img126 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/126.jpg"))
+        self.my_img127 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/127.jpg"))
+        self.my_img128 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/128.jpg"))
+        self.my_img129 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/129.jpg"))
+        self.my_img130 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/130.jpg"))
+        self.my_img131 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/131.jpg"))
+        self.my_img132 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/132.jpg"))
+        self.my_img133 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/133.jpg"))
+        self.my_img134 = ImageTk.PhotoImage(Image.open("/home/pi/Desktop/SmartMirror/Smart-Mirror-master/images/134.jpg"))
 
         self.image_list = [self.my_img1, self.my_img2, self.my_img3, self.my_img4, self.my_img5, self.my_img6,
-                           self.my_img7, self.my_img8, self.my_img9]
+                           self.my_img7, self.my_img8, self.my_img9, self.my_img10, self.my_img11, self.my_img12,
+                           self.my_img13,
+                           self.my_img14,
+                           self.my_img15,
+                           self.my_img16,
+                           self.my_img17,
+                           self.my_img18,
+                           self.my_img19,
+                           self.my_img20,
+                           self.my_img21,
+                           self.my_img22,
+                           self.my_img23,
+                           self.my_img24,
+                           self.my_img25,
+                           self.my_img26,
+                           self.my_img27,
+                           self.my_img28,
+                           self.my_img29,
+                           self.my_img30,
+                           self.my_img31,
+                           self.my_img32,
+                           self.my_img33,
+                           self.my_img34,
+                           self.my_img35,
+                           self.my_img36,
+                           self.my_img37,
+                           self.my_img38,
+                           self.my_img39,
+                           self.my_img40,
+                           self.my_img41,
+                           self.my_img42,
+                           self.my_img43,
+                           self.my_img44,
+                           self.my_img45,
+                           self.my_img46,
+                           self.my_img47,
+                           self.my_img48,
+                           self.my_img49,
+                           self.my_img50,
+                           self.my_img51,
+                           self.my_img52,
+                           self.my_img53,
+                           self.my_img54,
+                           self.my_img55,
+                           self.my_img56,
+                           self.my_img57,
+                           self.my_img58,
+                           self.my_img59,
+                           self.my_img60,
+                           self.my_img61,
+                           self.my_img62,
+                           self.my_img63,
+                           self.my_img64,
+                           self.my_img65,
+                           self.my_img66,
+                           self.my_img67,
+                           self.my_img68,
+                           self.my_img69,
+                           self.my_img70,
+                           self.my_img71,
+                           self.my_img72,
+                           self.my_img73,
+                           self.my_img74,
+                           self.my_img75,
+                           self.my_img76,
+                           self.my_img77,
+                           self.my_img78,
+                           self.my_img79,
+                           self.my_img80,
+                           self.my_img81,
+                           self.my_img82,
+                           self.my_img83,
+                           self.my_img84,
+                           self.my_img85,
+                           self.my_img86,
+                           self.my_img87,
+                           self.my_img88,
+                           self.my_img89,
+                           self.my_img90,
+                           self.my_img91,
+                           self.my_img92,
+                           self.my_img93,
+                           self.my_img94,
+                           self.my_img95,
+                           self.my_img96,
+                           self.my_img97,
+                           self.my_img98,
+                           self.my_img99,
+                           self.my_img100,
+                           self.my_img101,
+                           self.my_img102,
+                           self.my_img103,
+                           self.my_img104,
+                           self.my_img105,
+                           self.my_img106,
+                           self.my_img107,
+                           self.my_img108,
+                           self.my_img109,
+                           self.my_img110,
+                           self.my_img111,
+                           self.my_img112,
+                           self.my_img113,
+                           self.my_img114,
+                           self.my_img115,
+                           self.my_img116,
+                           self.my_img117,
+                           self.my_img118,
+                           self.my_img119,
+                           self.my_img120,
+                           self.my_img121,
+                           self.my_img122,
+                           self.my_img123,
+                           self.my_img124,
+                           self.my_img125,
+                           self.my_img126,
+                           self.my_img127,
+                           self.my_img128,
+                           self.my_img129,
+                           self.my_img130,
+                           self.my_img131,
+                           self.my_img132,
+                           self.my_img133,
+                           self.my_img134
+                           ]
 
         self.my_label = Label(image=self.my_img1)
         self.my_label.config(borderwidth=0, highlightthickness=0)
