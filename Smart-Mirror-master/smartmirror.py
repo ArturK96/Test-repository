@@ -339,7 +339,7 @@ class FullscreenWindow:
         self.lockimage = LockImage(self.rightFrame)
         self.lockimage.pack(side=BOTTOM, anchor=N, padx=0, pady=0)
         self.images = Images(self.rightFrame)
-        self.images.pack(side=TOP, anchor=S, padx=0, pady=0)
+        self.images.pack(side=BOTTOM, anchor=S, padx=0, pady=0)
         # clock
         self.clock = Clock(self.leftFrame1)
         self.clock.pack(side=TOP, anchor=N, padx=30, pady=10)
